@@ -1,10 +1,56 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
   <xacro:macro name="robotiq_arg2f_transmission" params="prefix">
+    <!-- Should be called left_outer_knuckle_joint, but isn't for backwards compatibility -->
     <transmission name="${prefix}finger_joint_trans">
       <type>transmission_interface/SimpleTransmission</type>
       <joint name="${prefix}finger_joint">
-        <hardwareInterface>PositionJointInterface</hardwareInterface>
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="${prefix}finger_joint_motor">
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+    <transmission name="${prefix}right_outer_knuckle_joint_trans">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="${prefix}right_outer_knuckle_joint">
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="${prefix}finger_joint_motor">
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+    <transmission name="${prefix}left_inner_knuckle_joint_trans">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="${prefix}left_inner_knuckle_joint">
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="${prefix}finger_joint_motor">
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+    <transmission name="${prefix}right_inner_knuckle_joint_trans">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="${prefix}right_inner_knuckle_joint">
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="${prefix}finger_joint_motor">
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+    <transmission name="${prefix}left_inner_finger_joint_trans">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="${prefix}left_inner_finger_joint">
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="${prefix}finger_joint_motor">
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+    <transmission name="${prefix}right_inner_finger_joint_trans">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="${prefix}right_inner_finger_joint">
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
       </joint>
       <actuator name="${prefix}finger_joint_motor">
         <mechanicalReduction>1</mechanicalReduction>

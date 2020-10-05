@@ -2,7 +2,7 @@
     <!-- Launch the controller for the gripper movements in Gazebo -->
     <rosparam file="$(find robotiq_2f_85_gripper_visualization)/config/controller.yaml" command="load"/>
 
-    <node name="controller_manager" pkg="controller_manager" type="spawner" respawn="false" output="screen" args="robotiq_2f_85/gripper_controller robotiq_2f_85/joint_state_controller"/>
+    <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" args="robotiq_2f_85/left_controller robotiq_2f_85/right_controller robotiq_2f_85/joint_state_controller"/>
 
     <!-- Fake Calibration -->
     <node pkg="rostopic" type="rostopic" name="fake_joint_calibration" args="pub /calibrated std_msgs/Bool true" />
