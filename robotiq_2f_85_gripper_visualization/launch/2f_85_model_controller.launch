@@ -10,4 +10,6 @@
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
         <remap from="/joint_states" to="/robotiq_2f_85/joint_states"/>
     </node>
+
+    <node name="control_script" pkg="robotiq_2f_85_gripper_visualization" type="simulated_gripper_control.py" respawn="false" output="screen"/>
 </launch>
